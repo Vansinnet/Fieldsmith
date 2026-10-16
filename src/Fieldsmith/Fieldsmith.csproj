@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+    <PluginGuid>se.junge.valheim.fieldsmith</PluginGuid>
+    <PluginName>Fieldsmith</PluginName>
+  </PropertyGroup>
+  <ItemGroup>
+    <GameReference Include="BepInEx;0Harmony;assembly_valheim;assembly_utils;assembly_guiutils;Splatform;UnityEngine;UnityEngine.CoreModule;UnityEngine.IMGUIModule;UnityEngine.PhysicsModule;UnityEngine.TextRenderingModule" />
+  </ItemGroup>
+</Project>

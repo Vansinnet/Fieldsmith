@@ -1,0 +1,328 @@
+{
+  "inspectedDate": "2026-10-15",
+  "gameVersion": "1.0.20",
+  "tool": "UnityPy 1.25.0 (scripts/tools/inspect_prefabs.py)",
+  "source": "valheim_Data/StreamingAssets/SoftRef/Bundles/c4210710",
+  "sourceSha256": "2FDCF6840C7A5EA64A3F19B63BB3047D5884C202BA67B7AFC997491F635A1B55",
+  "status": "Source-verified",
+  "costItemsFound": [
+    "BeechSeeds",
+    "FirCone",
+    "Wood",
+    "YggdrasilWood"
+  ],
+  "effectsFound": [
+    "vfx_Place_wood_pole",
+    "sfx_build_cultivator"
+  ],
+  "prefabs": [
+    {
+      "name": "RaspberryBush",
+      "pickable": {
+        "item": "Raspberry",
+        "amount": 1,
+        "respawnMinutes": 300.0,
+        "hideWhenPicked": "Berrys"
+      },
+      "components": [
+        "Destructible",
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "BlueberryBush",
+      "pickable": {
+        "item": "Blueberries",
+        "amount": 1,
+        "respawnMinutes": 300.0,
+        "hideWhenPicked": "Berrys"
+      },
+      "components": [
+        "Destructible",
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "CloudberryBush",
+      "pickable": {
+        "item": "Cloudberry",
+        "amount": 1,
+        "respawnMinutes": 300.0,
+        "hideWhenPicked": "Berrys"
+      },
+      "components": [
+        "Destructible",
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "LingonberryBush",
+      "pickable": {
+        "item": "Lingonberry",
+        "amount": 1,
+        "respawnMinutes": 300.0,
+        "hideWhenPicked": "Berries"
+      },
+      "components": [
+        "Destructible",
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Mushroom",
+      "pickable": {
+        "item": "Mushroom",
+        "amount": 1,
+        "respawnMinutes": 240.0,
+        "hideWhenPicked": "visual"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Mushroom_yellow",
+      "pickable": {
+        "item": "MushroomYellow",
+        "amount": 1,
+        "respawnMinutes": 240.0,
+        "hideWhenPicked": "visual"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Mushroom_blue",
+      "pickable": {
+        "item": "MushroomBlue",
+        "amount": 1,
+        "respawnMinutes": 240.0,
+        "hideWhenPicked": "visual"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Thistle",
+      "pickable": {
+        "item": "Thistle",
+        "amount": 1,
+        "respawnMinutes": 240.0,
+        "hideWhenPicked": "visual"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Dandelion",
+      "pickable": {
+        "item": "Dandelion",
+        "amount": 1,
+        "respawnMinutes": 240.0,
+        "hideWhenPicked": "visual"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_SmokePuff",
+      "pickable": {
+        "item": "MushroomSmokePuff",
+        "amount": 1,
+        "respawnMinutes": 240.0,
+        "hideWhenPicked": "visual"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Fiddlehead",
+      "pickable": {
+        "item": "Fiddleheadfern",
+        "amount": 1,
+        "respawnMinutes": 300.0,
+        "hideWhenPicked": "visual"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Beech_small1",
+      "components": [
+        "ZNetView",
+        "Destructible"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "FirTree_small",
+      "components": [
+        "ZNetView",
+        "Destructible"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "FirTree_small_dead",
+      "components": [
+        "ZNetView",
+        "Destructible"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Bush01",
+      "components": [
+        "Destructible",
+        "ZNetView"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Bush01_heath",
+      "components": [
+        "Destructible",
+        "ZNetView"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Bush02_en",
+      "components": [
+        "Destructible",
+        "ZNetView"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "shrub_2",
+      "components": [],
+      "hasPiece": false,
+      "note": "root GameObject of this name in the bundle has no components; the ZNetScene prefab is resolved at runtime"
+    },
+    {
+      "name": "shrub_2_heath",
+      "components": [
+        "Destructible",
+        "ZNetView"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "YggaShoot_small1",
+      "components": [
+        "ZNetView",
+        "Destructible"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "vines",
+      "components": [
+        "ZNetView",
+        "WearNTear"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "FernAshlands",
+      "components": [
+        "Destructible",
+        "ZNetView"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Branch",
+      "pickable": {
+        "item": "Wood",
+        "amount": 1,
+        "respawnMinutes": 240.0,
+        "hideWhenPicked": "model"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Stone",
+      "pickable": {
+        "item": "Stone",
+        "amount": 1,
+        "respawnMinutes": 0.0,
+        "hideWhenPicked": null
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    },
+    {
+      "name": "Pickable_Flint",
+      "pickable": {
+        "item": "Flint",
+        "amount": 1,
+        "respawnMinutes": 240.0,
+        "hideWhenPicked": "model"
+      },
+      "components": [
+        "ZNetView",
+        "Pickable"
+      ],
+      "hasPiece": false
+    }
+  ],
+  "runtimeCoverage": "None; Piece creation, Cultivator menu entries, placement and yields have not been observed.",
+  "colliders": {
+    "note": "Collider hierarchy read with UnityPy 1.25.0 on 2026-10-15; layer 12 = item, 16/20/25 as in the bundle.",
+    "allUnderHideWhenPicked": [
+      "Pickable_Mushroom (visual)",
+      "Pickable_Mushroom_yellow (visual)",
+      "Pickable_Mushroom_blue (visual)",
+      "Pickable_SmokePuff (visual)",
+      "Pickable_Thistle (visual/default)",
+      "Pickable_Dandelion (visual)",
+      "Pickable_Fiddlehead (visual)",
+      "Pickable_Branch (model)",
+      "Pickable_Flint (model)"
+    ],
+    "outsideHideWhenPicked": [
+      "RaspberryBush (model, viewblock)",
+      "BlueberryBush (model, viewblock)",
+      "CloudberryBush (Sphere)",
+      "LingonberryBush (LingonBush, viewblock)"
+    ],
+    "layerOfHiddenColliders": 12
+  }
+}

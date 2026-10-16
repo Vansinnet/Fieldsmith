@@ -6,7 +6,7 @@ Plant crops and saplings in perfect grids with the Cultivator: one at a time or 
 
 **Status: Runtime-pending.** The mod compiles against Valheim 1.0.20 and its grid and cost logic is covered by automated tests, but it has not yet been observed in a live game. Use it on a backed-up world.
 
-**Download:** [GitHub releases](https://github.com/Vansinnet/Fieldsmith/releases). Take the newest release (marked *Pre-release* while the mod is Runtime-pending), download `Fieldsmith-<version>.zip` under *Assets* and extract it into `BepInEx/plugins/Fieldsmith/`.
+**Download:** [GitHub releases](https://github.com/Vansinnet/Fieldsmith/releases). Take the latest release, download `Fieldsmith-<version>.zip` under *Assets* and extract it into `BepInEx/plugins/Fieldsmith/`.
 
 ## How It Works
 

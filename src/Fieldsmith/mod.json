@@ -1,0 +1,12 @@
+{
+  "description": "Grid planting with the Cultivator: 1x1 to 10x10 per click, rows that follow your field, preview, undo, block harvest, adjustable stamina. Adds berry bushes, mushrooms, flowers, small trees and debris. Client-side; works on vanilla servers.",
+  "websiteUrl": "",
+  "installSide": "client",
+  "vanillaClientsSupported": true,
+  "runtimeStatus": "Runtime-pending",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2351"
+  ],
+  "githubRepository": "Vansinnet/Fieldsmith",
+  "upstream": null
+}
