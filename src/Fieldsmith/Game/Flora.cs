@@ -132,7 +132,8 @@ namespace Fieldsmith
             piece.m_canBeRemoved = entry.Removable;
             // Enemies may attack placed ones, never wild ones.
             piece.m_targetNonPlayerBuilt = false;
-            piece.m_resources = requirements;
+            piece.m_resources = Priced(entry, requirements, db);
+            // The catalog's first cost item, so a small tree keeps its seed or cone as icon when it costs wood.
             piece.m_icon = requirements[0].m_resItem.m_itemData.GetIcon();
             var effects = new List<EffectList.EffectData>(2);
             if (effect) effects.Add(new EffectList.EffectData { m_prefab = effect, m_enabled = true });
@@ -165,8 +166,13 @@ namespace Fieldsmith
             return result.Length > 0 ? result : null;
         }
 
-        // [Plants] Costs changed: new requirements for every added piece. The build menu reads them live.
-        private static void Reprice()
+        // A small tree costs wood instead of its seed or cone while [Plants] TreesCostWood is on.
+        private static Piece.Requirement[] Priced(FloraEntry entry, Piece.Requirement[] requirements, ObjectDB db) =>
+            entry.Tree && Trees.CostWood ? Trees.WoodCost(db) ?? requirements : requirements;
+
+        // [Plants] Costs or TreesCostWood changed: new requirements for every added piece. The build menu reads
+        // them live.
+        internal static void Reprice()
         {
             ObjectDB db = ObjectDB.instance;
             if (!db) return;
@@ -174,7 +180,7 @@ namespace Fieldsmith
             {
                 if (!pair.Value || !byPrefab.TryGetValue(pair.Key, out FloraEntry entry)) continue;
                 Piece.Requirement[] requirements = Requirements(entry, pair.Value.gameObject, db);
-                if (requirements != null) pair.Value.m_resources = requirements;
+                if (requirements != null) pair.Value.m_resources = Priced(entry, requirements, db);
             }
         }
 

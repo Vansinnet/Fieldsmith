@@ -29,8 +29,8 @@ Fieldsmith adds the game's wild plants to the Cultivator's build menu, so you do
 | Mushrooms, yellow mushrooms, blue mushrooms, smoke puffs | 1 of them | 5 |
 | Thistle, dandelion | 1 of them | 5 |
 | Fiddlehead (gives 3 per pick) | 3 fiddleheads | 15 |
-| Small beech | 1 beech seed | same |
-| Small fir, small dead fir | 1 fir cone | same |
+| Small beech | 1 wood (1 beech seed with `TreesCostWood` off) | same |
+| Small fir, small dead fir | 1 wood (1 fir cone with `TreesCostWood` off) | same |
 | Bush, heath bush, shrub, heath shrub, Ashlands fern | 2 wood | same |
 | Plains bush | 3 wood | same |
 | Small ygga shoot | 1 yggdrasil wood and 2 wood | same |
@@ -80,11 +80,14 @@ Plants grow on the computer of the player who owns them. In single player that i
 | | Per plant |
 |---|---|
 | Seeds | As in vanilla (usually one seed). A click plants only as many as you have seeds for. |
+| Trees | **1 wood** instead of a seed or cone for every tree sapling (beech, birch, oak, fir, pine and big fir) and for the small trees (`[Plants] TreesCostWood`, on by default; off gives the game's costs). |
 | Stamina | `StaminaPerPlant`, default **1**, anything from **0** (free) to **25**. Like vanilla it is reduced by your Farming skill (up to half at level 100; can be turned off) and by the world's stamina modifier. A click plants only as many as your stamina pays for. |
 | Tool wear | As in vanilla, once per plant (can be set to once per click). |
 | Farming skill | Raised once per plant, as when planting one by one, also for wild plants and replanted seeds. Undoing plants works like removing pieces in vanilla: the next plants do not raise the skill again. Picking crops, berries, mushrooms, flowers and fiddleheads raises Farming exactly as in vanilla (once per crop, also in a block harvest; the game gives skill for the same bush or mushroom only once per game session, and none for branches, stones and flint). |
 
 The stamina setting also applies with the grid turned off. Vanilla still requires the Cultivator's minimum stamina before any click, even when the setting is 0.
+
+With trees costing wood, the saplings appear in the Cultivator as soon as you have found wood, without finding their seeds first. The game then keeps them as learned, also if you turn the setting off or remove Fieldsmith (they cost their seed or cone again then). The planted trees are the game's own, and the cost only applies to you: other players pay what their game or mods ask. Saplings added by other mods (such as Plant Everything's) keep their costs.
 
 ## Controls
 
@@ -127,7 +130,7 @@ If you also use another planting mod (for example FarmGrid, FarmGridRemake, Mass
 `BepInEx/config/se.junge.valheim.fieldsmith.cfg`. Changes apply immediately, except `[General] Enabled` and `[Plants] AddWildPlants` (restart) and the starting values `DefaultSize` and `SnapToGrid` (next game start).
 
 - `[General] Enabled` turns the mod on or off.
-- `[Plants] AddWildPlants` (default on, restart) adds the wild plants to the Cultivator; `Costs` (`Seed` or `PlantEverything`, applies at once) sets their price; `RemoveRadius` (0.5 to 15 m, default 3) is the area of Left Shift + remove.
+- `[Plants] AddWildPlants` (default on, restart) adds the wild plants to the Cultivator; `Costs` (`Seed` or `PlantEverything`, applies at once) sets their price; `TreesCostWood` (default on, applies at once) makes tree saplings and small trees cost 1 wood; `RemoveRadius` (0.5 to 15 m, default 3) is the area of Left Shift + remove.
 - `[Harvest]` `Enabled`, `Size` (0 = planting pattern size, at least 3), `StaminaPerCrop` (0 to 25, default 0), `Replant` (default off).
 - `[Costs]` `StaminaPerPlant` (0 to 25, default 1), `StaminaSkillReduction`, `DurabilityPerPlant`.
 - `[Pattern]` `DefaultSize`, `MaximumSize` (up to 10).

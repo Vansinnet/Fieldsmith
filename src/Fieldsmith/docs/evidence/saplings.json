@@ -1,0 +1,92 @@
+{
+  "inspectedDate": "2026-10-18",
+  "gameVersion": "1.0.20",
+  "tool": "UnityPy 1.25.0 (scripts/tools/inspect_prefabs.py; cost items, grown prefabs and the piece table resolved by path id in the same bundle)",
+  "source": "valheim_Data/StreamingAssets/SoftRef/Bundles/c4210710",
+  "sourceSha256": "2FDCF6840C7A5EA64A3F19B63BB3047D5884C202BA67B7AFC997491F635A1B55",
+  "status": "Source-verified",
+  "cultivatorPieceTable": {
+    "name": "_CultivatorPieceTable",
+    "canRemovePieces": false,
+    "pieces": [
+      "cultivate_v2",
+      "replant_v2",
+      "sapling_turnip",
+      "sapling_seedturnip",
+      "sapling_onion",
+      "sapling_seedonion",
+      "sapling_carrot",
+      "sapling_seedcarrot",
+      "sapling_barley",
+      "sapling_flax",
+      "sapling_jotunpuffs",
+      "sapling_magecap",
+      "sapling_oat",
+      "sapling_poteitr",
+      "sapling_Kale",
+      "sapling_seedkale",
+      "Beech_Sapling",
+      "Birch_Sapling",
+      "Oak_Sapling",
+      "FirTree_Sapling",
+      "PineTree_Sapling",
+      "FirTree_big_Sapling",
+      "VineAsh_sapling",
+      "VineGreen_sapling"
+    ]
+  },
+  "treeSaplings": [
+    {
+      "name": "Beech_Sapling",
+      "pieceName": "$prop_beech_sapling",
+      "resources": [{ "item": "BeechSeeds", "amount": 1, "recover": false }],
+      "grownPrefabs": ["Beech1"],
+      "growTimeSeconds": [3000.0, 5000.0],
+      "plantBiome": 25
+    },
+    {
+      "name": "Birch_Sapling",
+      "pieceName": "$prop_birch_sapling",
+      "resources": [{ "item": "BirchSeeds", "amount": 1, "recover": false }],
+      "grownPrefabs": ["Birch1", "Birch2"],
+      "growTimeSeconds": [5000.0, 7000.0],
+      "plantBiome": 25
+    },
+    {
+      "name": "Oak_Sapling",
+      "pieceName": "$prop_oak_sapling",
+      "resources": [{ "item": "Acorn", "amount": 1, "recover": false }],
+      "grownPrefabs": ["Oak1"],
+      "growTimeSeconds": [6000.0, 8000.0],
+      "plantBiome": 25
+    },
+    {
+      "name": "FirTree_Sapling",
+      "pieceName": "$prop_fir_sapling",
+      "resources": [{ "item": "FirCone", "amount": 1, "recover": false }],
+      "grownPrefabs": ["FirTree"],
+      "growTimeSeconds": [3000.0, 5000.0],
+      "plantBiome": 29
+    },
+    {
+      "name": "PineTree_Sapling",
+      "pieceName": "$prop_pine_sapling",
+      "resources": [{ "item": "PineCone", "amount": 1, "recover": false }],
+      "grownPrefabs": ["Pinetree_01"],
+      "growTimeSeconds": [3000.0, 5000.0],
+      "plantBiome": 25
+    },
+    {
+      "name": "FirTree_big_Sapling",
+      "pieceName": "$prop_fir_big_sapling",
+      "resources": [{ "item": "FirConeFrost", "amount": 1, "recover": false }],
+      "grownPrefabs": ["FirTree_big"],
+      "growTimeSeconds": [3000.0, 5000.0],
+      "plantBiome": 29
+    }
+  ],
+  "notes": [
+    "Every tree sapling has a Piece with m_cultivatedGroundOnly 0 and m_onlyInBiome 0, and a Plant; plantBiome is Plant.m_biome (25 = Meadows, Black Forest, Plains; 29 adds Mountain).",
+    "VineAsh_sapling and VineGreen_sapling are vines, not trees, and keep their cost."
+  ]
+}

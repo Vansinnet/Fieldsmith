@@ -49,10 +49,12 @@ namespace Fieldsmith
         // Regrow time in minutes for a placed one that never grows back in the game (the stone); 0 keeps the
         // game's behaviour.
         internal readonly double RegrowMinutes;
+        // A small tree: costs wood instead of its seed or cone with [Plants] TreesCostWood (TreeCatalog).
+        internal readonly bool Tree;
 
         internal FloraEntry(string prefab, string name, string description, FloraCost[] costs, bool removable,
             bool recover = false, bool grounded = true, int yield = 0, bool noExtraDrops = false, double[][] snapPoints = null,
-            double regrowMinutes = 0)
+            double regrowMinutes = 0, bool tree = false)
         {
             Prefab = prefab;
             Name = name;
@@ -65,6 +67,7 @@ namespace Fieldsmith
             NoExtraDrops = noExtraDrops;
             SnapPoints = snapPoints;
             RegrowMinutes = regrowMinutes;
+            Tree = tree;
         }
     }
 
@@ -92,9 +95,9 @@ namespace Fieldsmith
             new FloraEntry("Pickable_SmokePuff", "Smoke puffs", "Smoke puffs grow back after picking.", Own(5), true),
             new FloraEntry("Pickable_Fiddlehead", "Fiddlehead", "Fiddleheads grow back after picking, three at a time.", Own(15), true,
                 yield: 3, noExtraDrops: true),
-            new FloraEntry("Beech_small1", "Small beech", "A small beech tree.", Of("BeechSeeds", 1), false),
-            new FloraEntry("FirTree_small", "Small fir", "A small fir tree.", Of("FirCone", 1), false),
-            new FloraEntry("FirTree_small_dead", "Small dead fir", "A small dead fir tree.", Of("FirCone", 1), false),
+            new FloraEntry("Beech_small1", "Small beech", "A small beech tree.", Of("BeechSeeds", 1), false, tree: true),
+            new FloraEntry("FirTree_small", "Small fir", "A small fir tree.", Of("FirCone", 1), false, tree: true),
+            new FloraEntry("FirTree_small_dead", "Small dead fir", "A small dead fir tree.", Of("FirCone", 1), false, tree: true),
             new FloraEntry("Bush01", "Bush", "A small bush.", Of("Wood", 2), false),
             new FloraEntry("Bush01_heath", "Heath bush", "A small heath bush.", Of("Wood", 2), false),
             new FloraEntry("Bush02_en", "Plains bush", "A bush of the Plains.", Of("Wood", 3), false),

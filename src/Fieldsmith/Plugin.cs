@@ -41,6 +41,7 @@ namespace Fieldsmith
 
             instance = this;
             var settings = new Settings(Config);
+            Trees.Initialize(Logger, settings.TreesCostWood);
             Flora.Initialize(Logger, settings.AddWildPlants.Value, settings.WildPlantCosts);
             RemoveRadius = settings.RemoveRadius;
             Growth.Initialize(settings.GrowTimeHours, settings.GrowTimeMinutes);
@@ -107,6 +108,7 @@ namespace Fieldsmith
             Controller = null;
             Plants.Clear();
             Flora.Clear();
+            Trees.Clear();
             Growth.Clear();
             if (instance == this) instance = null;
         }

@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- New setting `[Plants] TreesCostWood` (on by default, applies at once): tree saplings (beech, birch, oak, fir, pine and big fir) and the small trees cost 1 wood instead of a seed or cone.
+- Undo returns what the click cost, even if a cost setting changed since.
+
 ## 0.1.0 - 2026-10-16
 
 - Grid planting with the Cultivator: the plant ghost snaps to a square grid with each plant's own spacing.

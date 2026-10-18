@@ -91,8 +91,8 @@ namespace Fieldsmith
         }
     }
 
-    // Wild plants (Flora): the Cultivator gets them once both the scene's prefabs and the item database exist;
-    // either may wake up first.
+    // Wild plants (Flora) and the wood cost of trees (Trees): applied once both the scene's prefabs and the item
+    // database exist; either may wake up first.
     [HarmonyPatch(typeof(ZNetScene), "Awake")]
     internal static class ZNetSceneAwakePatch
     {
@@ -187,6 +187,7 @@ namespace Fieldsmith
         {
             try
             {
+                Trees.Install();
                 Flora.Install();
             }
             catch (Exception error)

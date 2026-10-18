@@ -39,6 +39,7 @@ internal static class Program
             ("RegrowTimerFollowsVanillaRespawn", RegrowTimerFollowsVanillaRespawn),
             ("GrowTimeSettingReplacesGameTimes", GrowTimeSettingReplacesGameTimes),
             ("SeedCostsPayBackOnTheFirstPick", SeedCostsPayBackOnTheFirstPick),
+            ("TreesCostOneWood", TreesCostOneWood),
         };
         int failed = 0;
         foreach (var (name, run) in scenarios)
@@ -442,6 +443,26 @@ internal static class Program
         Check(FloraCatalog.TryGet("Pickable_Stone", out FloraEntry stone) && Near(stone.RegrowMinutes, FloraCatalog.FlintRegrowMinutes) && Near(stone.RegrowMinutes, 240), "stone grows back like flint");
         foreach (FloraEntry entry in FloraCatalog.All)
             if (entry.Prefab != "Pickable_Stone") Check(entry.RegrowMinutes == 0, "only the stone gets a regrowth: " + entry.Prefab);
+    }
+
+    private static void TreesCostOneWood()
+    {
+        // The tree saplings of the Cultivator in the 1.0.20 bundle (docs/evidence/saplings.json).
+        var saplings = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "Beech_Sapling", "Birch_Sapling", "Oak_Sapling", "FirTree_Sapling", "PineTree_Sapling", "FirTree_big_Sapling",
+        };
+        Check(TreeCatalog.Saplings.Count == saplings.Count && saplings.SetEquals(TreeCatalog.Saplings), "the six tree saplings, each once");
+        Check(TreeCatalog.WoodItem == "Wood" && TreeCatalog.WoodAmount == 1, "one wood");
+        var smallTrees = new HashSet<string>(StringComparer.Ordinal) { "Beech_small1", "FirTree_small", "FirTree_small_dead" };
+        foreach (FloraEntry entry in FloraCatalog.All)
+        {
+            Check(entry.Tree == smallTrees.Contains(entry.Prefab), "only the small trees cost wood instead: " + entry.Prefab);
+            Check(!saplings.Contains(entry.Prefab), "saplings are not wild plants: " + entry.Prefab);
+            if (!entry.Tree) continue;
+            Check(entry.Costs.Length == 1 && entry.Costs[0].Item != null && entry.Costs[0].Item != TreeCatalog.WoodItem, "a small tree's catalog cost is its seed or cone: " + entry.Prefab);
+        }
+        Check(FloraCatalog.TryGet("YggaShoot_small1", out FloraEntry shoot) && !shoot.Tree, "the ygga shoot keeps its wood cost");
     }
 
     private static void GrowTimeSettingReplacesGameTimes()

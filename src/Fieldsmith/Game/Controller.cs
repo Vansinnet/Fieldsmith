@@ -105,7 +105,8 @@ namespace Fieldsmith
         private sealed class Batch
         {
             internal readonly List<GameObject> Plants = new List<GameObject>();
-            internal Piece Piece;
+            // The requirements charged per plant at the click; undo refunds these even if the cost changed since.
+            internal Piece.Requirement[] Costs;
             internal bool Charged;
             internal bool Objects;
             // Server time (ticks) right after the click, for objects picked since.
@@ -410,7 +411,7 @@ namespace Fieldsmith
 
             bool cheated = (player.GetInventory().ItemCheated(piece.m_resources) || player.NoCostCheat()) && !PlayerProfile.s_bypassCheatChecks;
             PlayerProfile profile = Game.instance ? Game.instance.GetPlayerProfile() : null;
-            var batch = new Batch { Piece = piece, Charged = !freeKey && !player.PlacementCostDisabled, Objects = info.IsObject };
+            var batch = new Batch { Costs = piece.m_resources, Charged = !freeKey && !player.PlacementCostDisabled, Objects = info.IsObject };
             Quaternion rotation = ghost.transform.rotation;
             int count = 0;
             int lateBlocked = 0;
@@ -588,9 +589,9 @@ namespace Fieldsmith
                 ref int debt = ref GameAccess.BuildRemoveDebt(player);
                 debt = Math.Min(20, debt + alive.Count);
             }
-            if (batch.Charged && batch.Piece)
+            if (batch.Charged && batch.Costs != null)
             {
-                foreach (Piece.Requirement requirement in batch.Piece.m_resources)
+                foreach (Piece.Requirement requirement in batch.Costs)
                 {
                     if (requirement == null || !requirement.m_resItem || requirement.m_amount <= 0) continue;
                     Refund(player, requirement.m_resItem, requirement.m_amount * alive.Count);

@@ -32,6 +32,7 @@ namespace Fieldsmith
         internal readonly ConfigEntry<bool> Replant;
         internal readonly ConfigEntry<bool> AddWildPlants;
         internal readonly ConfigEntry<FloraCostMode> WildPlantCosts;
+        internal readonly ConfigEntry<bool> TreesCostWood;
         internal readonly ConfigEntry<float> RemoveRadius;
         internal readonly ConfigEntry<int> GrowTimeHours;
         internal readonly ConfigEntry<int> GrowTimeMinutes;
@@ -81,6 +82,8 @@ namespace Fieldsmith
                 "Add the game's wild plants to the Cultivator: berry bushes, mushrooms, thistle, dandelion, smoke puffs, fiddlehead, small trees, bushes, shrubs, vines, Ashlands fern, branches, stones and flint, at Plant Everything's default costs. Placed ones are ordinary objects that every player sees. Ignored while Plant Everything is installed. Restart after changing.");
             WildPlantCosts = config.Bind("Plants", "Costs", FloraCostMode.Seed,
                 "Seed: a berry bush, mushroom, flower, fiddlehead, branch, flint or stone costs what one pick gives (1 raspberry, 1 mushroom, 3 fiddleheads), so the first pick pays it back and every regrowth is a gain. PlantEverything: Plant Everything's default costs (5 berries, 5 mushrooms, 15 fiddleheads, 5 wood for a branch, 5 flint). Bushes and small trees cost the same in both. Applies at once.");
+            TreesCostWood = config.Bind("Plants", "TreesCostWood", true,
+                "Tree saplings (beech, birch, oak, fir, pine and big fir) and the small trees (small beech, small fir, small dead fir) cost 1 wood instead of their seed or cone. Off: the game's costs. The planted trees are the game's own; only the cost changes, for the player who plants. A sapling appears in the Cultivator once you have found wood, and the game then keeps it as learned. Applies at once.");
             RemoveRadius = config.Bind("Plants", "RemoveRadius", 3f,
                 new ConfigDescription("Metres around the aim in which Left Shift (Alt place) + remove button with the Cultivator removes every wild plant someone planted. The remove button alone removes one.", new AcceptableValueRange<float>(0.5f, 15f)));
             GrowTimeHours = config.Bind("Growth", "GrowTimeHours", 0,

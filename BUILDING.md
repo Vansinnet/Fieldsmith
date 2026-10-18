@@ -1,6 +1,6 @@
 # Building Fieldsmith
 
-This repository mirrors the source of Fieldsmith 0.1.0 from the author's mod workspace (commit 93fd745). Releases are built and validated there; the downloads are on the [releases page](https://github.com/Vansinnet/Fieldsmith/releases).
+This repository mirrors the source of Fieldsmith 0.1.0 from the author's mod workspace (commit 0507a75). Releases are built and validated there; the downloads are on the [releases page](https://github.com/Vansinnet/Fieldsmith/releases).
 
 Requirements: the .NET SDK (10 or newer) and Valheim 1.0.20 with BepInEx 5.4.23.5.
 
