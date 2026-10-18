@@ -6,7 +6,7 @@ Record for every session: date, role (single player, listen host, client), Valhe
 
 ## Smallest Required Test
 
-1. Disable other planting mods in Vortex (FarmGrid / FarmGridRemake, MassFarming, PlantEasily and similar); they also move the plant ghost or replace planting. Deploy with `scripts/Deploy-Mod.ps1 -Mod Fieldsmith` and start the game. Confirm `Fieldsmith 0.1.0 loaded` in `BepInEx/LogOutput.log`, with no `[Error` lines from Fieldsmith.
+1. Disable other planting mods in Vortex (FarmGrid / FarmGridRemake, MassFarming, PlantEasily and similar); they also move the plant ghost or replace planting. Deploy with `scripts/Deploy-Mod.ps1 -Mod Fieldsmith` and start the game. Confirm `Fieldsmith 0.2.0 loaded` in `BepInEx/LogOutput.log`, with no `[Error` lines from Fieldsmith.
 2. On a copy of a world, cultivate a patch of ground, equip the Cultivator and select carrot (or any) seeds. Confirm the panel on the left and one line per plant in the log with its grow radius, collider reach and automatic spacing.
 3. With 1x1, plant a row of single plants: each snaps to the grid one spacing apart. Then set 3x3 (Shift + wheel or F8) and click next to the row: nine plants appear, aligned with the row, nine seeds and 9 x `StaminaPerPlant` stamina (less with Farming skill) are used.
 4. Wait until the plants have been in the ground for at least 10 seconds and hover each one: every plant must say healthy, none "needs more space". Press Backspace: the last nine plants disappear and nine seeds come back.

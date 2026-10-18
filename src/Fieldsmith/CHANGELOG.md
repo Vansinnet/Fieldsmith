@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.0 - 2026-10-18
 
 - New setting `[Plants] TreesCostWood` (on by default, applies at once): tree saplings (beech, birch, oak, fir, pine and big fir) and the small trees cost 1 wood instead of a seed or cone.
 - Undo returns what the click cost, even if a cost setting changed since.

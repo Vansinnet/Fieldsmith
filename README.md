@@ -1,6 +1,6 @@
 # Fieldsmith
 
-Version **0.1.0** for Valheim **1.0.20** with BepInEx 5.
+Version **0.2.0** for Valheim **1.0.20** with BepInEx 5.
 
 Plant crops and saplings in perfect grids with the Cultivator: one at a time or a whole 3x3, 4x4 or larger block in one click, in straight rows that continue your existing field, with a live preview on the ground, undo and an adjustable stamina cost. Harvest a whole block of ripe crops with Shift + E, and replant it automatically if you like.
 
